@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Willd — Charcoal Grill</title>
+<meta name="description" content="The Willd — charcoal-grilled meats and smoky flavors." />
+<style>
+  :root{
+    --accent1:#ff6b2d;
+    --accent2:#ff9a3c;
+    --muted:rgba(255,255,255,0.85);
+    --card-bg: rgba(0,0,0,0.38);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color:#fff;
+    background: #0b0b0b;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{position:relative;z-index:2;max-width:1100px;margin:28px auto;padding:20px}
+
+  header{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:76px;height:76px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center}
+  .logo img{width:68px;height:68px;object-fit:cover;display:block}
+  h1{margin:0;font-size:20px}
+  .subtitle{color:var(--muted);font-size:13px;margin-top:4px}
+
+  nav{display:flex;gap:10px;align-items:center}
+  nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+  nav a:hover{background:rgba(255,255,255,0.04);color:#fff}
+  .btn-order{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#111;padding:8px 12px;border-radius:10px;font-weight:700;text-decoration:none}
+
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-top:18px;align-items:center}
+  .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+  .hero-card h2{margin:0 0 8px 0;font-size:28px}
+  .hero-card p{color:var(--muted);margin:0 0 12px 0}
+
+  .hero-img{width:420px;height:300px;border-radius:12px;overflow:hidden}
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ====== MENU GRID (4 columns) ====== */
+  .menu-section{margin-top:26px}
+  .menu-title{font-size:22px;color:var(--accent1);margin-bottom:12px}
+  .menu-4grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+  }
+  .menu-card{
+    background:var(--card-bg);
+    border-radius:10px;
+    padding:14px;
+    border:1px solid rgba(255,255,255,0.04);
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+  }
+  .menu-card h3{
+    margin:8px 0 6px 0;
+    color:var(--accent2);
+    font-size:17px;
+  }
+  .menu-card p{
+    color:var(--muted);
+    margin:0;
+    font-size:14px;
+    line-height:1.45;
+  }
+  .menu-ar{direction:rtl;text-align:right;color:#fff;line-height:1.45;font-size:15px}
+
+  /* صور للأصناف */
+  .menu-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* responsive */
+  @media (max-width:1100px){
+    .menu-4grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:780px){
+    .menu-4grid{grid-template-columns:repeat(2,1fr)}
+    .hero{grid-template-columns:1fr}
+  }
+  @media (max-width:480px){
+    .menu-4grid{grid-template-columns:1fr}
+  }
+
+  footer{text-align:center;color:var(--muted);margin-top:26px;padding-bottom:36px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+  <div class="brand">
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo">
+    </div>
+    <div>
+      <h1>The Willd</h1>
+      <div class="subtitle">Authentic charcoal-grilled meats & smoky flavors</div>
+      <div style="font-size:14px; color:var(--muted); margin-top:4px;">
+        📍 106 شارع النيل، العجوزه، الجيزة<br>
+        ☎️ 0123456789
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#drinks-desserts">Drinks & Desserts</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Reserve</a>
+    <a class="btn-order" href="#order">اطلب الآن</a>
+  </nav>
+</header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <h2>Charcoal-Grilled Goodness</h2>
+      <p class="muted">Slowly grilled over real charcoal; smoky, tender and full of character.</p>
+    </div>
+    <div class="hero-img">
+      <img src="hero.png" alt="Hero" onerror="this.src='campfire.jpg'">
+    </div>
+  </section>
+
+  <!-- MENU: المشويات -->
+  <section id="menu" class="menu-section">
+    <div class="menu-title">قائمة الوجبات التقليدية</div>
+    <div class="menu-4grid">
+
+      <div class="menu-card">
+        <img src="images/briy-mixed.jpg" alt="وجبة بري مشكّلة" class="menu-img">
+        <h3>1) وجبة بري مشكّلة</h3>
+        <div class="menu-ar">
+          <ul>
+            <li>كباب لحم بري</li>
+            <li>ريش بري مشوية</li>
+            <li>كبدة بري مشوية</li>
+            <li>طحينة + سلطة بلدي + رز مندي</li>
+            <li>خبز بدوي</li>
+          </ul>
+          <p style="margin-top:8px;color:var(--muted)">أفضل وجبة عامة وشاملة.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="images/ribs.jpg" alt="وجبة ريش لحم بري" class="menu-img">
+        <h3>2) وجبة ريش لحم بري</h3>
+        <div class="menu-ar">
+          <ul>
+            <li>ريش متتبلة ببهارات بدوية</li>
+            <li>جريل على الفحم</li>
+            <li>تقدم مع: سلطة طحينة – رز كبسة – مخلل</li>
+          </ul>
+          <p style="margin-top:8px;color:var(--muted)">تنفع لزبون يحب الطعم القوي.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="images/kebab.jpg" alt="وجبة كباب بري أصلي" class="menu-img">
+        <h3>3) وجبة كباب بري أصلي</h3>
+        <div class="menu-ar">
+          <ul>
+            <li>كباب على الفحم من لحم بري مفروم</li>
+            <li>بصل مشوي + طحينة + تبولة</li>
+            <li>خبز عربي</li>
+          </ul>
+          <p style="margin-top:8px;color:var(--muted)">وجبة سريعة وطلبها عالي.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="images/ossal.jpg" alt="وجبة أوصال لحم بري" class="menu-img">
+        <h3>4) وجبة أوصال لحم بري</h3>
+        <div class="menu-ar">
+          <ul>
+            <li>قطع لحم بري على أسياخ</li>
+            <li>فحم + بصل + طماطم مشوية</li>
+            <li>تقدم مع رز بخاري أو رز شعيرية</li>
+          </ul>
+          <p style="margin-top:8px;color:var(--muted)">ممتازة للناس اللي بتحب قطع اللحم.</p>
+        </div>
+      </div>
+
+      <!-- بقية المشويات بنفس الشكل: كلاوي وكبدة، مدخّن، الشيف، الأطباق الجانبية -->
+
+    </div>
+
+    <!-- باقي الأقسام: المكرونات، الأرز، السلطات -->
+    <div class="menu-title" style="margin-top:22px">المكرونات البدوية</div>
+    <div class="menu-4grid">
+      <div class="menu-card">
+        <img src="images/pasta1.jpg" alt="مكرونة بدوية باللحم البري" class="menu-img">
+        <h3>1) مكرونة بدوية باللحم البري</h3>
+        <p>مكرونة أقلام أو سباجيتي مع قطع لحم بري محمرة بالسمن البلدي وبهارات بدوية. تُقدّم على جمر بسيط أو مع نكهة تدخين.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/pasta2.jpg" alt="مكرونة سادة بدوية بالسمن" class="menu-img">
+        <h3>2) مكرونة سادة بدوية بالسمن</h3>
+        <p>مكرونة مسلوقة، سمن بلدي + فلفل أسود + ملح، تُزين ببصل محمر أو زعتر بري.</p>
+      </div>
+    </div>
+
+    <div class="menu-title" style="margin-top:22px">أصناف الأرز</div>
+    <div class="menu-4grid">
+      <div class="menu-card">
+        <img src="images/mandi.jpg" alt="رز مندي بدوي" class="menu-img">
+        <h3>رز مندي بدوي</h3>
+        <p>رز بسمتي أصفر، يُطبخ على نار هادئة وينكّه بـ: هال – قرنفل – ورق غار – فحم للتدخين. ممتاز مع لحم بري مشوي.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/kabsa.jpg" alt="رز كبسة بالبهارات البدوية" class="menu-img">
+        <h3>رز كبسة بالبهارات البدوية</h3>
+        <p>رز بسمتي مع بهارات كبسة + فلفل أسود + قرفة + طماطم مبشورة. نكهة قوية تناسب اللحم البري.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/biryani.jpg" alt="رز برياني عربي" class="menu-img">
+        <h3>رز برياني عربي</h3>
+        <p>رز بسمتي مع بصل، زبيب، زعفران وبهارات برياني — يعطي طعم حار وحلو خفيف مع اللحم.</p>
+      </div>
+    </div>
+
+    <div class="menu-title" style="margin-top:22px">السلطات</div>
+    <div class="menu-4grid">
+      <div class="menu-card">
+        <img src="images/zaatar.jpg" alt="سلطة بالزعتر" class="menu-img">
+        <h3>سلطة بالزعتر</h3>
+        <p>زعتر بري، زيت زيتون، طماطم وخبز محمّر — نكهة بدوية أصيلة.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/tabbouleh.jpg" alt="سلطة تبولة" class="menu-img">
+        <h3>سلطة تبولة</h3>
+        <p>برغل ناعم، بقدونس، طماطم، ليمون وزيت — طازجة وخفيفة مع المشويات.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- DRINKS & DESSERTS -->
+  <section id="drinks-desserts" class="menu-section">
+    <div class="menu-title">مشروبات ساخنة</div>
+    <div class="menu-4grid">
+      <div class="menu-card">
+        <img src="images/coffee.jpg" alt="قهوة عربية" class="menu-img">
+        <h3>قهوة عربية/بدوية</h3>
+        <p>قهوة مطحونة طازجة مع هيل، تُقدم في دلة أو فنجان صغير، رائعة للتدفئة بعد المشويات.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/chai.jpg" alt="شاي كرك" class="menu-img">
+        <h3>شاي كرك / شاي عدني</h3>
+        <p>شاي أسود مع حليب وبهارات (هيل، قرنفل، قرفة) أو حليب مع سكنجبير — يعطي دفء وطابع شرقي.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/minttea.jpg" alt="شاي نعناع" class="menu-img">
+        <h3>شاي نعناع / شاي أعشاب</h3>
+        <p>نعناع طازج أو حلبة أو يانسون أو مزيج أعشاب — خفيف ومريح بعد الأكل الثقيل.</p>
+      </div>
+    </div>
+
+    <div class="menu-title" style="margin-top:22px">مشروبات باردة</div>
+    <div class="menu-4grid">
+      <div class="menu-card">
+        <img src="images/ayran.jpg" alt="لبن رايب" class="menu-img">
+        <h3>لبن رايب / عيران</h3>
+        <p>لبن مخفوق أو مخلوط مع قليل ملح ونعناع — ممتاز لتخفيف دسامة المشويات.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/soda.jpg" alt="مياه غازية" class="menu-img">
+        <h3>مياه غازية</h3>
+        <p>كوكاكولا، سبرانغ، بيبسي، أو مياه غازية محلية.</p>
+      </div>
+    </div>
+
+    <div class="menu-title" style="margin-top:22px">مشروبات شرقية</div>
+    <div class="menu-4grid">
+      <div class="menu-card">
+        <img src="images/hibiscus.jpg" alt="كركديه بارد" class="menu-img">
+        <h3>كركديه بارد</h3>
+        <p>شراب زهرة الكركديه المنعش، بطعم حمضي خفيف ولون جذاب.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/tamarind.jpg" alt="تمر هندي" class="menu-img">
+        <h3>تمر هندي</h3>
+        <p>شراب تمر هندي مُثلج، بمذاق حلو لاذع وطابع بدوي.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/sobia.jpg" alt="سوبيا مصرية" class="menu-img">
+        <h3>سوبيا مصرية</h3>
+        <p>مشروب تقليدي من الحليب والأرز والفانيليا والقرفة — خفيف ومنعش.</p>
+      </div>
+    </div>
+
+    <div class="menu-title" style="margin-top:22px">عصائر طبيعية</div>
+    <div class="menu-4grid">
+      <div class="menu-card">
+        <img src="images/orangejuice.jpg" alt="عصير برتقال" class="menu-img">
+        <h3>عصير برتقال طازج</h3>
+        <p>منعش وبسيط — مناسب مع الأطعمة الدسمة.</p>
+      </div>
+      <div class="menu-card">
+        <img src="images/mango.jpg" alt="عصير مانجو" class="menu-img">
+        <h3>عصير مانجو / جوافة / فراولة</h3>
+        <p>اختيارات فاكهية محبوبة لدى الجميع.</
+<!-- حلويات شرقية -->
+<div class="menu-title" style="margin-top:22px">حلويات شرقية</div>
+<div class="menu-4grid">
+  <div class="menu-card">
+    <img src="images/omali.jpg" alt="أم علي بدوية" class="menu-img">
+    <h3>أم علي بدوية</h3>
+    <p>أم علي بالطرق التقليدية البدوية — غنية ودافئة.</p>
+  </div>
+  <div class="menu-card">
+    <img src="images/kunafa.jpg" alt="كنافة" class="menu-img">
+    <h3>كنافة (3 نكهات)</h3>
+    <p>اختيار بين الكلاسيك / نوتيلا / مانجو.</p>
+  </div>
+  <div class="menu-card">
+    <img src="images/baklava.jpg" alt="بقلاوة مشكّلة" class="menu-img">
+    <h3>بقلاوة مشكّلة</h3>
+    <p>مجموعة متنوعة من البقلاوة الشرقية الطازجة.</p>
+  </div>
+  <div class="menu-card">
+    <img src="images/muhallabia.jpg" alt="مهلبية أو أرز بحليب" class="menu-img">
+    <h3>مهلبية أو أرز بحليب</h3>
+    <p>حلو خفيف يقدم بارد أو دافئ.</p>
+  </div>
+</div>
+<!-- نهاية قائمة الحلويات -->
+
+<!-- FOOTER: خريطة وخصية الطلب -->
+<section id="order" class="menu-section" style="margin-top:40px">
+  <div class="menu-title">📍 موقعنا على الخريطة</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);margin-bottom:18px">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.123456789!2d31.197654321!3d30.003456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584123456789ab%3A0xabcdef1234567890!2s106%20شارع%20النيل%2C%20العجوزه%2C%20الجيزة!5e0!3m2!1sar!2seg!4v1699999999999" 
+      width="100%" 
+      height="300" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="menu-title">🛒 خصية الطلب</div>
+  <p style="text-align:center; margin-bottom:12px; color:var(--muted); font-size:15px;">
+    لطلب وجبتك، اتصل على الرقم أو استخدم خدمة WhatsApp:
+  </p>
+  <div style="text-align:center;">
+    <a href="tel:0123456789" class="btn-order" style="margin-right:6px;">اتصل الآن</a>
+    <a href="https://wa.me/20123456789" target="_blank" class="btn-order">WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  جميع الحقوق محفوظة © 2025 The Willd
+</footer>
